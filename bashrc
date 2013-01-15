@@ -1,6 +1,18 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoreboth
+umask 002
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# Force `ls` and `grep` to be colorful under screen/tmux.
+[[ "$TERM" == "screen-256color" ]] && {
+  alias ls="ls --color=always"
+  alias grep="grep --color=always"
+}
+
 set -o vi
 export EDITOR=/usr/bin/vim
 
@@ -88,6 +100,7 @@ alias svn='/usr/local/Cellar/subversion/1.7.7/bin/svn'
 alias vi='/usr/bin/vim'
 
 source ~/.bash_functions
+source ~/.megalodon.profile
 
 prompt_pwd() {
   newPWD="${PWD/#$HOME/~}"
