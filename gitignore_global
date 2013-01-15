@@ -1,0 +1,25 @@
+# Patch/diff artifacts.
+*.patch
+*.diff
+*.orig
+*.rej
+interdiff*.txt
+
+# emacs artifacts.
+*~
+\#*\#
+
+# Hidden files.
+.DS*
+.project
+
+# Project files
+*.kpf
+
+# Windows links.
+*.lnk
+
+# Temporary files.
+tmp*
+*.bak
+*.swp
