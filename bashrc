@@ -87,6 +87,8 @@ alias ruby18='/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/rub
 alias svn='/usr/local/Cellar/subversion/1.7.7/bin/svn'
 alias vi='/usr/bin/vim'
 
+source ~/.bash_functions
+
 prompt_pwd() {
   newPWD="${PWD/#$HOME/~}"
   echo $newPWD
