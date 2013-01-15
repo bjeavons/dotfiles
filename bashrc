@@ -6,6 +6,7 @@ export HISTCONTROL=ignoreboth
 umask 002
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
+PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"'
 
 # Force `ls` and `grep` to be colorful under screen/tmux.
 [[ "$TERM" == "screen-256color" ]] && {
@@ -13,7 +14,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
   alias grep="grep --color=always"
 }
 
-set -o vi
+set -o emacs
 export EDITOR=/usr/bin/vim
 
 if [ -f /etc/bash_completion ]; then
