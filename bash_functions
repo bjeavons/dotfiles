@@ -15,11 +15,3 @@ function udate() {
 function unixdate() {
   date +%s
 }
-
-svn() {
-    if [ x"$1" = xdiff ] || [ x"$1" = xdi ]; then
-        /usr/local/bin/svn "$@" | vim -R -
-    else
-        /usr/local/bin/svn "$@"
-    fi
-}

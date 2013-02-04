@@ -8,10 +8,8 @@ export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME}\007"'
 
-# Force `ls` and `grep` to be colorful under screen/tmux.
-[[ "$TERM" == "screen-256color" ]] && {
-  alias ls="ls --color=always"
-  alias grep="grep --color=always"
+[[ "$TERM" == "xterm" ]] && {
+  alias grep="grep --color=auto"
 }
 
 set -o emacs
@@ -97,7 +95,6 @@ On_IWhite='\e[0;107m' # White
 
 alias php='/usr/local/Cellar/php/stable/bin/php'
 alias ruby18='/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby'
-alias svn='/usr/local/Cellar/subversion/1.7.7/bin/svn'
 alias vi='/usr/bin/vim'
 
 source ~/.bash_functions
@@ -112,6 +109,6 @@ export PS1="⟶  \[$BIBlack\]\$(prompt_pwd)\n\u@\h \[$White\] ❤\[$Color_Off\] 
 if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
 export GIT_PS1_SHOWDIRTYSTATE=true
   source /usr/local/git/contrib/completion/git-completion.bash
-  gitprompt='$(__git_ps1 "(%s)")'
-  export PS1="⟶  \[$BIBlack\]\$(prompt_pwd)\n\u@\h \[$BIRed\]$gitprompt\[$White\] ❤\[$Color_Off\] "
+  gitprompt='$(__git_ps1 "(%s)") '
+  export PS1="⟶  \[$BIBlack\]\$(prompt_pwd)\n\u@\h \[$BIRed\]$gitprompt\[$White\]❤\[$Color_Off\] "
 fi
